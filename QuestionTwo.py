@@ -5,7 +5,7 @@ def find_files(suffix, path):
     if os.path.isfile(path) and path.endswith(".c"):
         listFound.append(path)
         return listFound
-    elif os.path.isfile(path) and not path.endswith(".c"):
+    elif os.path.isfile(path) andgit  not path.endswith(".c"):
         return listFound
         
     """
