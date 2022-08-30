@@ -1,6 +1,9 @@
 
 
 
+from typing import Set
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -71,21 +74,28 @@ def intersection(llist_1, llist_2):
     elif llist_1.head is None or llist_2.head is None:
         return "No intersection"
     intersected = LinkedList()
-    tracker = []
-    unionll = []
+    tracker  = {}
     current1 = llist_1.head
     current2 = llist_2.head
-    while current2 is not None:
-        if current1 is None:
-            unionll.append(current2)
-            current2 = current2.next
-        else:
-            unionll.append(current1)
+    while current1 is not None:
+        if current1.value not in tracker:
+            tracker[current1.value] = 1
             current1 = current1.next
-    for i in unionll:
-        if i in tracker:
-            intersected.append
-            
+        elif current1.value in tracker:
+            tracker[current1.value] += 1
+            current1 = current1.next
+
+    while current2 is not None:
+        if current2.value in tracker:
+            intersected.append(current2)
+            tracker.pop(current2.value)
+            current2 = current2.next
+        current2 = current2.next
+    if intersected.head is not None:
+        return intersected
+    return "No intersection found"
+        
+    
             
 
             
@@ -107,7 +117,7 @@ for i in element_2:
     linked_list_2.append(i)
 
 print (union(linked_list_1,linked_list_2))
-# print (intersection(linked_list_1,linked_list_2))
+print (intersection(linked_list_1,linked_list_2))
 
 # Test case 2
 
@@ -127,4 +137,4 @@ empty_llist = LinkedList()
 
 # print (union(linked_list_3,linked_list_4))
 print(union(empty_llist, empty_llist))
-# print (intersection(linked_list_3,linked_list_4))
+print (intersection(linked_list_3,linked_list_4))

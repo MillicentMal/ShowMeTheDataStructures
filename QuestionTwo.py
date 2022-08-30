@@ -1,25 +1,26 @@
-import sys
+from genericpath import isfile
+import os
+def find_files(suffix, path):
+    listFound = []
+    if os.path.isfile(path) and path.endswith(".c"):
+        listFound.append(path)
+        return listFound
+    elif os.path.isfile(path) and not path.endswith(".c"):
+        return listFound
+        
+    """
+    Find all files beneath path with file name suffix.
 
-def huffman_encoding(data):
-    pass
+    Note that a path may contain further subdirectories
+    and those subdirectories may also contain further subdirectories.
 
-def huffman_decoding(data,tree):
-    pass
+    There are no limit to the depth of the subdirectories can be.
 
-if __name__ == "__main__":
-    codes = {}
+    Args:
+      suffix(str): suffix if the file name to be found
+      path(str): path of the file system
 
-    a_great_sentence = "The bird is the word"
-
-    print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
-    print ("The content of the data is: {}\n".format(a_great_sentence))
-
-    encoded_data, tree = huffman_encoding(a_great_sentence)
-
-    print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
-    print ("The content of the encoded data is: {}\n".format(encoded_data))
-
-    decoded_data = huffman_decoding(encoded_data, tree)
-
-    print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-    print ("The content of the encoded data is: {}\n".format(decoded_data))
+    Returns:
+       a list of paths
+    """
+    return None
