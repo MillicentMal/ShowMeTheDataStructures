@@ -1,8 +1,8 @@
 
 
-
+import os
 def find_files(suffix, path):
-    import os
+  
     found = []
     if os.path.isdir(path):
         for file in os.listdir(path):
@@ -14,4 +14,4 @@ def find_files(suffix, path):
 
     return found
     
-print(find_files(".c", "testdir1"))
+print(find_files(".c", ".testdir1"))
