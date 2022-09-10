@@ -32,14 +32,18 @@ class Node:
 def build_huff(frequency_list):
     tree = []
     while len(frequency_list) > 1:
+        print(frequency_list[-1][1])
+        print(frequency_list[-2][1])
+        
         new_node_value = frequency_list[-1][1] + frequency_list[-2][1]
+        print(new_node_value)
         new_node = Node(new_node_value)
-        new_node.leftChild = Node(frequency_list[-1][0], 0, frequency_list[-1][1])
-        new_node.leftChild = Node(frequency_list[-2][0], 0, frequency_list[-2][1])
+        new_node.leftChild = Node(frequency_list[-1][1], 0, frequency_list[-1][0])
+        new_node.rightChild = Node(frequency_list[-2][1], 1, frequency_list[-2][0])
         frequency_list.pop()
         frequency_list.pop()
-        frequency_list.insert(0, new_node_value)
-    return frequency_list
+        # frequency_list.append(new_node.value)
+    # return frequency_list
 
 print(build_huff(frequency_counter("THis is a trial")))
 
