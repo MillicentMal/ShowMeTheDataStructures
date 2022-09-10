@@ -15,3 +15,4 @@ def find_files(suffix, path):
     return found
     
 print(find_files(".c", ".testdir1"))
+print(find_files("cheese", ".md"))
