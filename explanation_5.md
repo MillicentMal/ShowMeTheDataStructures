@@ -1,0 +1,1 @@
+The Blockchain has an insert and view_only option. INsertion is O(1) as we make reference to the last element. The view only function has a time complexity of O(n), and space.

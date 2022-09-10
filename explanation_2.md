@@ -1,0 +1,2 @@
+The space complexity is O(n). The function goes through each path given and checks if it is a file or folder. Then appends the respective items to the output list. This is in a scenario whereby every item checked is a file
+The time complexity will be the O(n + m), where n is the number of directories, and m is the number of files in each directory. The function will recursively go through all these. The return structure is a basic python list.

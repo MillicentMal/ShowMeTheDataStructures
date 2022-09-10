@@ -12,9 +12,9 @@ class Block:
     def calc_hash(self, data):
         sha = hashlib.sha256()
 
-        hash_str = str(data).encode('utf-8')
+        hsh_str = str(data).encode('utf-8')
 
-        sha.update(hash_str)
+        sha.update(hsh_str)
 
         return sha.hexdigest()
 
